@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h1>Dasshboard </h1>;
-const SurveyNew = () => <h1>Survey</h1>;
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <BrowserRouter>
           <div className="container">
             <Header />
@@ -28,4 +28,7 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
